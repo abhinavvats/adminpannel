@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Admin pannel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./dataTable.css">
+    <script src="./jquery-2.2.4.min.js"></script>
+    <script src="./dataTable.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+
+            <div>
+                <a href="/login.html" style="cursor: pointer; font-size: 30px;">Admin Pannel</a>
+            </div>
+            <ul class="lisst-unstyled components">
+
+                <li>
+                    <a href="/index.html" style="cursor: pointer;">Educate</a>
+                </li>
+                <li class="active">
+                    <!-- <ul class="lisst-unstyled components">
+                        <li>
+                            <a href="./index.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/topic.html">Add Topic</a>
+                        </li>
+                    </ul> -->
+                    <!-- <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Dashboard</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="/index.html">Add Subjects</a>
+                            </li>
+                            <li>
+                                <a href="/topic.html">Add Topic</a>
+                            </li>
+    
+    
+                        </ul>
+                         </li> -->
+                    <!-- <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">User</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Change Password</a>
+                        </li>
+                        <li>
+                            <a href="#">Delete Account</a>
+                        </li>
+
+
+                    </ul>
+                </li> -->
+                    <!-- <li><a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">Subjects</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+
+                        <li>
+                            <a href="#">Mathematics</a>
+                        </li>
+                        <li>
+                            <a href="#">Physics</a>
+                        </li>
+                        <li>
+                            <a href="#">Chemistry</a>
+                        </li>
+
+                    </ul>
+                </li> -->
+                    <!-- <li>
+                    <a href="#status" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">Teacher</a>
+                    <ul class="collapse list-unstyled" id="status">
+                        <li>
+                            <a href="#">Paid</a>
+                        </li>
+                        <li>
+                            <a href="#">Free</a>
+                        </li>
+
+
+                    </ul>
+                </li> -->
+                <li><a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">Users</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+
+                        <li>
+                            <a href="/auser.html">Add user</a>
+                        </li>
+                        <li>
+                            <a href="/user.html">User list</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/subject.html">Subjects</a>
+                </li>
+                <li>
+                    <a href="/topic.html">Topics</a>
+                </li>
+                <li>
+                    <a href="/index.html">About</a>
+                </li>
+                <li>
+                    <a href="/index.html">Policy</a>
+                </li>
+                <li>
+                    <a href="/index.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>
+                            Toggle Sidebar
+                        </span>
+
+                    </button>
+                </div>
+            </nav>
+            <br><br>
+            <h2>Dashboard</h2>
+
+            <div class="line">
+
+            </div>
+            <div class="container">
+                <button type="button" class="btn btn-success add" data-toggle="modal" data-target="#exampleModal">
+                    ADD User +
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                        <label>User Name</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Enter User Name">
+                                        <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Email id</label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1"
+                                            aria-describedby="emailHelp" placeholder="Enter Email">
+                                        <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1"
+                                            placeholder="Enter Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Teacher</label>
+                                        <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Subject Format"> -->
+                                       <tr>
+                                          <td>
+                                               <select id="format">
+                                                   <option value="opt1">Select Type</option>
+                                                   <option value="opt2">Unpaid</option>
+                                                   <option value="opt3">Paid</option>
+                                                  </select>
+                                              </td>
+                                          </tr>
+                                      </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Password</th>
+                            <th scope="col">Status</th>
+                            <th colspan="2">Action</th>
+                            <th scope="col">Type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mark</td>
+                            <td>Otto@gmail.com</td>
+                            <td>sdfghjk</td>
+                            <td><a class="btn btn-warning">Offline</td>
+                            <td><a href="" class="btn btn-outline-success">Edit</a></td>
+                            <td><a href="" class="btn btn-outline-danger">Delete</a></td>
+                            <td>
+
+                                <li><a href="#abcd" data-toggle="collapse" aria-expanded="false"
+                                        class="dropdown-toggle">Select</a>
+                                    <ul class="collapse list-unstyled" id="abcd">
+
+                                        <li>
+                                            <a href="/auser.html">Paid</a>
+                                        </li>
+                                        <li>
+                                            <a href="/user.html">Unpaid</a>
+                                        </li>
+                                        <li>
+                                            <a href="/user.html">Teacher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Jacob</td>
+                            <td>Thornton@rediffmail.com</td>
+                            <td>fghjklat</td>
+                            <td><a class="btn btn-warning">Active</td>
+                            <td><a href="" class="btn btn-outline-success">Edit</a></td>
+                            <td><a href="" class="btn btn-outline-danger">Delete</a></td>
+                            <td>
+
+                                <li><a href="#abce" data-toggle="collapse" aria-expanded="false"
+                                        class="dropdown-toggle">Select</a>
+                                    <ul class="collapse list-unstyled" id="abce">
+
+                                        <li>
+                                            <a href="/auser.html">Paid</a>
+                                        </li>
+                                        <li>
+                                            <a href="/user.html">Unpaid</a>
+                                        </li>
+                                        <li>
+                                            <a href="/user.html">Teacher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Larry</td>
+                            <td>larry@hotmail.com</td>
+                            <td>sdffdcfer</td>
+                            <td><a class="btn btn-warning">Offline</td>
+                            <td><a href="" class="btn btn-outline-success">Edit</a></td>
+                            <td><a href="" class="btn btn-outline-danger">Delete</a></td>
+                            <td>
+
+                                <li><a href="#abcf" data-toggle="collapse" aria-expanded="false"
+                                        class="dropdown-toggle">Select</a>
+                                    <ul class="collapse list-unstyled" id="abcf">
+
+                                        <li>
+                                            <a href="/auser.html">Paid</a>
+                                        </li>
+                                        <li>
+                                            <a href="/user.html">Unpaid</a>
+                                        </li>
+                                        <li>
+                                            <a href="/user.html">Teacher</a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+</body>
+
+</html>

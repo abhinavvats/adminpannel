@@ -1,0 +1,66 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: url(back.jpg);
+    background-size: cover;
+}
+.box{
+    width: 300px;
+    padding: 30px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    background: rgb(0,0,0,20%);
+    text-align: center;
+}
+.box h1{
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.both{
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 10px;
+    width: 220px;
+    outline: none;
+    color: rgb(255, 255, 255);
+    border-radius: 25px;
+    transition: 0.25px;
+}
+.box input[type="text"]:focus,.box input[type="password"]:focus{
+    width: 270px;
+    border-color: rgb(38, 0, 255);
+}
+.box input[type="submit"]{
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    padding: 14px 35px;
+    width: 220px;
+    outline: none;
+    color: rgb(230, 233, 221);
+    border-radius: 25px;
+    transition: 0.25px;
+    cursor: pointer;
+}
+.box input[type="submit"]:hover{
+    background:  rgb(33, 168, 15);
+}
+.button-box{
+    width: 220px;
+    margin: 35px auto;
+    position: relative;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+.home{
+    color: aqua;
+}
+.home :hover{
+    color: aqua;
+}

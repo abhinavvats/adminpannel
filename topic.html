@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education Admin pannel</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./dataTable.css">
+    <script src="./jquery-2.2.4.min.js"></script>
+    <script src="./dataTable.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.7.0/js/buttons.print.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav id="sidebar">
+
+            <div>
+                <a href="/login.html" style="cursor: pointer; font-size: 30px;">Admin Pannel</a>
+            </div>
+            <ul class="lisst-unstyled components">
+
+                <li>
+                    <a href="/index.html" style="cursor: pointer;">Educate</a>
+                </li>
+                <li class="active">
+                    <!-- <ul class="lisst-unstyled components">
+                        <li>
+                            <a href="./index.html">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="/topic.html">Add Topic</a>
+                        </li>
+                    </ul> -->
+                    <!-- <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                            class="dropdown-toggle">Dashboard</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="/index.html">Add Subjects</a>
+                            </li>
+                            <li>
+                                <a href="/topic.html">Add Topic</a>
+                            </li>
+    
+    
+                        </ul>
+                         </li> -->
+                    <!-- <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">User</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Change Password</a>
+                        </li>
+                        <li>
+                            <a href="#">Delete Account</a>
+                        </li>
+
+
+                    </ul>
+                </li> -->
+                <!-- <li><a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">Subjects</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+
+                        <li>
+                            <a href="#">Mathematics</a>
+                        </li>
+                        <li>
+                            <a href="#">Physics</a>
+                        </li>
+                        <li>
+                            <a href="#">Chemistry</a>
+                        </li>
+
+                    </ul>
+                </li> -->
+                <!-- <li>
+                    <a href="#status" data-toggle="collapse" aria-expanded="false"
+                        class="dropdown-toggle">Teacher</a>
+                    <ul class="collapse list-unstyled" id="status">
+                        <li>
+                            <a href="#">Paid</a>
+                        </li>
+                        <li>
+                            <a href="#">Free</a>
+                        </li>
+
+
+                    </ul>
+                </li> -->
+                <li><a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
+                    class="dropdown-toggle">Users</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+
+                    <li>
+                        <a href="/auser.html">Add user</a>
+                    </li>
+                    <li>
+                        <a href="/user.html">User list</a>
+                    </li>
+                </ul>
+            </li>
+                <li>
+                    <a href="/subject.html">Subjects</a>
+                </li>
+                <li>
+                    <a href="/topic.html">Topics</a>
+                </li>
+                <li>
+                    <a href="/index.html">About</a>
+                </li>
+                <li>
+                    <a href="/index.html">Policy</a>
+                </li>
+                <li>
+                    <a href="/index.html">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>
+                            Toggle Sidebar
+                        </span>
+
+                    </button>
+                </div>
+            </nav>
+            <br><br>
+            <h2>Dashboard</h2>
+          
+            <div class="line">
+
+            </div>
+            <div class="container">
+                <button type="button" class="btn btn-success add" data-toggle="modal" data-target="#exampleModal">
+                    ADD Topic +
+                </button>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Add Subject</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form>
+                                    <div class="form-group">
+                                      <label>Topic Name</label>
+                                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Topic Name">
+                                      <!-- <small id="emailHelp" class="form-text text-muted"></small> -->
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Description</label>
+                                      <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Subject Description">
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Format</label>
+                                      <!-- <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Subject Format"> -->
+                                     <tr>
+                                        <td>
+                                             <select id="format">
+                                                 <option value="opt1">Select format</option>
+                                                 <option value="opt1">Notes</option>
+                                                 <option value="opt2">Pdf</option>
+                                                 <option value="opt3">Links</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Links</label>
+                                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="link">
+                                      </div>
+                                      <div class="input-group mb-3">
+                                        <div class="custom-file">
+                                          <input type="file" class="custom-file-input" id="inputGroupFile02">
+                                          <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                        </div>
+                                        <div class="input-group-append">
+                                          <span class="input-group-text" id="">Upload</span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </form>
+                        </div>
+                    </div>
+                </div>
+                <table class="table" id="myTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Subject</th>
+                            <th scope="col">Description</th>
+                            <th scope="col">Format</th>
+                            <th scope="col">Links</th>
+                            <th scope="col">Users Status</th>
+                            <th scope="col" colspan="2" style="text-align: center;">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Mathematics</td>
+                            <td>Differential Equation</td>
+                            <td>Links</td>
+                            <td>abc.xyz</td>
+                            <td><a class="btn btn-warning">Offline</td>
+                            <td><a href="" class="btn btn-outline-success">Edit</a></td>
+                            <td><a href="" class="btn btn-outline-danger">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Physics</td>
+                            <td>Semi conductor</td>
+                            <td>Notes</td>
+                            <td>abc.xyz</td>
+                            <td><a class="btn btn-warning">Active</td>
+                            <td><a href="" class="btn btn-outline-success">Edit</a></td>
+                            <td><a href="" class="btn btn-outline-danger">Delete</a></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Chemistry</td>
+                            <td>Solution</td>
+                            <td>Word</td>
+                            <td>abc.xyz</td>
+                             <td><a class="btn btn-warning">Offline</td>
+                            <td><a href="" class="btn btn-outline-success">Edit</a></td>
+                            <td><a href="" class="btn btn-outline-danger">Delete</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+</body>
+
+</html>
